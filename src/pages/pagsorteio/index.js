@@ -5,10 +5,10 @@ import { MaterialCommunityIcons, } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/core'; '@react-navigation/native';
 
 
-import Menu  from '../../components/Menu';
+/* import Menu  from '../../components/Menu';
 import { ContainerLogo, Logo, Titlelogo, 
         Subtitle, Undertitle, ContainerInput, ContainerInput2,
-        BoxIcon, Input, Btnsorteio, ButtonText } from './style';
+        BoxIcon, Input, Btnsorteio, ButtonText } from './style'; */
 
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
             colors={['#E89700','#FFB114']}
             style={{flex: 1, justifyContent: 'center' }}
         >
-             <ContainerLogo>
+            {/*  <ContainerLogo>
                 <Titlelogo>Futebol NAD</Titlelogo>
                 <Logo source={require('../../assets/logo.png')} resizeMode="contain" />
                 <Subtitle>Sorteio dos Jogadores</Subtitle>
@@ -49,7 +49,7 @@ export default function Home() {
                <ButtonText>Sortear</ButtonText>
             </Btnsorteio>
             
-                
+                 */}
  
             <StatusBar style="light"/>
             <Menu/>

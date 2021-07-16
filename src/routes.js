@@ -1,9 +1,9 @@
 import React  from "react";
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, FontAwesome } from '@expo/vector-icons';
 
 import Home from './pages/Home';
-import Rsorteio from './pages/Rsorteio';
+import rsorteio from './pages/rsorteio';
 import sair from './pages/sair';
 
 const Drawer = createDrawerNavigator();
@@ -11,7 +11,11 @@ const Drawer = createDrawerNavigator();
 function Routes(){
     return (
         <Drawer.Navigator
+            drawerStyle={{
+                backgroundColor: '#363233',
+                width: 240,            }}
             drawerContentOptions={{
+                inactiveTintColor: '#fff',
                 activeBackgroundColor: '#C4C4C4',
                 activeTintColor: '#363233',
                 marginTop: 16,
@@ -20,6 +24,7 @@ function Routes(){
                 }
             }}        
         >
+
             <Drawer.Screen
                 name="Home"
                 component={Home}
@@ -27,7 +32,7 @@ function Routes(){
                     title: "Home",
                     drawerIcon: ({focused,size,color}) => (
                         <AntDesign
-                            name= {focused ? 'home' : 'home-outline'}
+                            name= {focused ? 'home' : 'home'}
                             size={size}
                             color={color}
                         />
@@ -36,21 +41,36 @@ function Routes(){
             />
 
             <Drawer.Screen
-                name="Rsorteio"
-                component={Rsorteio}
+                name="rsorteio"
+                component={rsorteio}
                 options={{
                     title: "Reiniciar Sorteio",
-                    drawerIcon: ({focused,size,color}) => {
+                    drawerIcon:({focused,size,color}) => (
                         <AntDesign
-                            name={focused ? 'retweet' : 'retweet-outline'}
+                            name= {focused ? 'retweet' : 'retweet'}
+                            size= {size}
+                            color= {color}
+                        />
+                    )
+                }}
+            />
+
+            <Drawer.Screen
+                name="sair"
+                component={sair}
+                options={{
+                    title: "Sair",
+                    drawerIcon:({focused,size,color}) => (
+                        <FontAwesome
+                            name={focused ? 'sign-out' : 'sign-out'}
                             size={size}
                             color={color}
                         />
-                    }
+                    )
                 }}
-            
             />
         </Drawer.Navigator>
+        
     );
 }
 export default Routes;
