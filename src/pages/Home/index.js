@@ -31,6 +31,7 @@ export default function Home() {
 
                <Input
                     placeholder="Digite o total de jogadores"
+                    KeyboardType="numeric"
                />
                
             </ContainerInput>
@@ -41,11 +42,12 @@ export default function Home() {
                </BoxIcon>
 
                <Input
+                    KeyboardType="numeric"
                     placeholder="Quantidade de jogadores por time " 
                /> 
             </ContainerInput2> 
 
-            <Btnsorteio onPress={() =>  navigation.navigate('rsorteio')}>
+            <Btnsorteio onPress={() =>  navigation.navigate('pagsorteio')}>
                <ButtonText>Sortear</ButtonText>
             </Btnsorteio>
             

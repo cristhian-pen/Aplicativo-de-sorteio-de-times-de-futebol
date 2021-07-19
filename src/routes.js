@@ -1,11 +1,14 @@
 import React  from "react";
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 
 import Home from './pages/Home';
-import rsorteio from './pages/rsorteio';
-import sair from './pages/sair';
+import rsorteio from './components/rsorteio';
+import sair from './components/sair';
+import pagsorteio from './pages/pagsorteio';
 
+const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 function Routes(){
@@ -69,8 +72,14 @@ function Routes(){
                     )
                 }}
             />
-        </Drawer.Navigator>
-        
+
+            <Drawer.Screen
+                name="pagsorteio"
+                component={pagsorteio}
+            />
+
+        </Drawer.Navigator>               
     );
-}
+            
+    }
 export default Routes;
