@@ -1,19 +1,16 @@
 import {StatusBar} from 'expo-status-bar';
-import React,{useState} from "react";
+import React from "react";
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons, } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/core'; '@react-navigation/native';
-
 
 import Menu  from '../../components/Menu';
+import BtnSortear from '../../components/BtnSorteio';
 import { ContainerLogo, Logo, Titlelogo, 
         Subtitle, Undertitle, ContainerInput, ContainerInput2,
-        BoxIcon, Input, Btnsorteio, ButtonText } from './style';
+        BoxIcon, Input } from './style';
 
 
 export default function Home() {
-    const [input,setInput] = useState('');
-    const navigation = useNavigation();
     return(
         <LinearGradient
             colors={['#E89700','#FFB114']}
@@ -31,8 +28,6 @@ export default function Home() {
                </BoxIcon>
 
                <Input
-                    onChangeText={ (text) => setInput(text) }
-                    value={input}
                     placeholder="Digite o total de jogadores"
                     KeyboardType="numeric"
                />
@@ -50,12 +45,7 @@ export default function Home() {
                /> 
             </ContainerInput2> 
 
-            <Btnsorteio onPress={() =>  navigation.navigate('pagsorteio')} onPress={() => s}>
-               <ButtonText>Sortear</ButtonText>
-            </Btnsorteio>
-            
-                
- 
+            <BtnSortear/>
             <StatusBar style="light"/>
             <Menu/>
     

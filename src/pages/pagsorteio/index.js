@@ -1,4 +1,3 @@
-import {StatusBar} from 'expo-status-bar';
 import React from "react";
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/core'; '@react-navigation/native';
@@ -10,6 +9,7 @@ import { Htext, BtnContent,Textbtn } from './style';
 
 
 export default function PagSorteio() {
+    const random = (num) => Math.floor(Math.random() * num);
     const navigation = useNavigation();
     return(
         <LinearGradient
@@ -19,8 +19,10 @@ export default function PagSorteio() {
         
         <Htext>Hora do Sorteio</Htext>
         
-        <BtnContent>
-            <Textbtn>Toque e segure para sortear seu time</Textbtn>
+        <BtnContent onLongPress={() => random(10)}>
+            if (!random) {
+            <Textbtn>Toque e segure para sortear seu time</Textbtn>    
+            }
         </BtnContent>
         <Menu/>
         </LinearGradient>
